@@ -22,6 +22,7 @@ header{
     width: 100%;
 }
 header h1{
+    color: maroon;
     font-size: 72px;
     font-weight: bold;
     font-family: 'Great Vibes', cursive;
@@ -80,7 +81,7 @@ nav a:active{
     box-shadow: 0 0 15px rgba(0,0,0,0.5) inset,
                 0 0 15px #fff;
 }
-.cikk{
+.theArticle{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,11 +94,11 @@ nav a:active{
     font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
 }
-.cikk img{
+.theArticle img{
     max-height: 65vh;
     max-width: 80vw;
 }
-.mintakep{
+.cookiePicture{
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -142,7 +143,7 @@ a{
     justify-content: flex-end;
 
 }
-.lapTetejereGombResz{
+.jumpUp{
     display: flex;
     justify-content: end;
 }
@@ -170,7 +171,7 @@ a{
 .jumpToTheTop:active{
     color: maroon;
 }
-.urlapBox{
+.formBox{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -180,7 +181,7 @@ a{
     background-size: cover;
     background-position: center;
 }
-.urlap{
+.formPaper{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,18 +193,18 @@ a{
     border-radius: 20px;
     backdrop-filter: blur(15px);
 }
-.input-box{
+.inputBox{
     position: relative;
     margin: 30px 0;
     
 }
-.input-box label{
+.inputBox label{
     position: absolute;
     top: 50%;
     left: 5px;
     font-size: 1em;
 }
-.input-box input{
+.inputBox input{
     width: 100%;
     height: 50px;
     background:  rgba(255,255,255,0.4);
@@ -214,14 +215,14 @@ a{
     color: #000;
     padding: 0 35px 0 5px;
 }
-.input-box .icon{
+.inputBox .icon{
     position: absolute;
     right: 8px;
     color: #fff;
     font-size: 1.2em;
     line-height: 57px;
 }
-.szulDatum input{
+.birthDate input{
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 10px #fff;
@@ -233,7 +234,7 @@ a{
     width: 300px;
     text-align: center;
 }
-.input-box textarea{
+.inputBox textarea{
     width: 100%;
     height: 150px;
     font-family: Arial, Helvetica, sans-serif;
@@ -263,7 +264,7 @@ select{
     text-align: center;
     background:  rgba(255,255,255,0.3);
 }
-.ertesites{
+.checkAllert{
     margin: 15px 0 30px;
     font-size: 0.9em;
     color: #000;
