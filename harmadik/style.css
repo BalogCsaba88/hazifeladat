@@ -47,7 +47,7 @@ nav{
     background-color: rgba(153, 134, 119,0.7);
 
 }
-nav a{
+.mainNavButton{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,18 +69,58 @@ nav a{
     box-shadow: 0 0 15px rgba(0,0,0,0.5),
                 0 0 15px #fff inset;
 }
-nav a:hover{
+.mainNavButton:hover{
     color: #fff;
     text-shadow: 0 0 5px #000,
                 0 0 10px #000,
                 0 0 15px #000;
 }
-nav a:active{
+.mainNavButton:active{
     text-shadow:0 0 5px maroon,
                 0 0 10px maroon,
                 0 0 15px maroon;
     box-shadow: 0 0 15px rgba(0,0,0,0.5) inset,
                 0 0 15px #fff;
+}
+.floatingMenu{
+    position: fixed;
+    bottom: 2vh;
+    right: 10px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.floatingMenuButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25%;
+    background-color: transparent;
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5em;
+    line-height: 1em;
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+}
+.facebook{
+    color: blue;
+}
+.twitter{
+    color: lightskyblue;
+}
+.printerest{
+    color: red;
+}
+.instagram{
+    color: purple;
+}
+.floatingMenuButton:hover{
+    box-shadow: 1px 1px 20px #000, inset 0 0 10px #fff;
 }
 .theArticle{
     display: flex;
