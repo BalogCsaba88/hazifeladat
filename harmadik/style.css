@@ -3,8 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --primary-color: rgba(153, 134, 119, 0.3);
+    --secondary-color: #000;
+}
+.darkTheme{
+    --primary-color: #000;
+    --secondary-color: #fff;
+}
 body{
-    background-color: rgba(153, 134, 119, 0.3);
+    background-color: var(--primary-color);
     max-width: 100vw;
     display: flex;
     flex-direction: column;
@@ -12,6 +20,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    color: var(--secondary-color);
 }
 header{
     background-image: url("./images/asd.jpg");
@@ -40,90 +49,23 @@ header h1{
                 0px 0px 120px white;
     padding: 32px;
 }
-/* .darkModeButtonBox{
-    margin: 0;
-    width: 15vw;
-    height: 10vh;
+.darkModeButtonBG{
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    margin: 20px;
+    border-radius: 10px;
     display: flex;
-
     align-items: center;
     justify-content: center;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 10px var(--secondary-color) inset, 0 0 20px var(--primary-color);
 }
-.darkModeLabel{
-    width: 125px;
-    height: 50px;
-    position: relative;
-    display: block;
-    background: #ebebeb;
-    border-radius: 100px;
-    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+#darkModeButton{
+    width: 40px;
+    height: 40px;
     cursor: pointer;
-    transition: 0.3s;
 }
-.darkModeLabel:after{
-    content: "";
-    width: 45px;
-    height: 45px;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    background: linear-gradient(180deg,#ffcc89,#d8860b);
-    border-radius: 45px;
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-.darkInput{
-    width: 0;
-    height: 0;
-    visibility: hidden;
-}
-.darkInput:checked + .darkModeLabel{
-    background: #242424;
-}
-.darkInput:checked + .darkModeLabel::after{
-    left: 122px;
-    transform: translateX(-100%);
-    background: linear-gradient(180deg,#777,#3a3a3a);
-}
-.darkModeLabel:active::after{
-    width: 65px;
-}
-.background{
-    width: 100vw;
-    height: 100vh;
-    background: #fff;
-    z-index: -1;
-    position: absolute;
-    transition: 0.3s;
-}
-.darkInput:checked + .darkModeLabel + .background{
-    background: #242424;
-}
-.darkModeLabel svg{
-    position: absolute;
-    width: 30px;
-    top: 10px;
-    z-index: 100;
-}
-.darkModeLabel svg.sun{
-    left: 10px;
-    fill:#fff;
-    transition: 0.3s;
-}
-
-.darkModeLabel svg.moon{
-    left: 85px;
-    fill:#7e7e7e;
-    transition: 0.3s;
-}
-
-.darkInput:checked + .darkModeLabel svg.sun{
-    fill:#7e7e7e;
-}
-
-.darkInput:checked + .darkModeLabel svg.moon{
-    fill:#fff;
-} */
 nav{
     display: flex;
     justify-content: space-around;
@@ -131,7 +73,6 @@ nav{
     width: 100%;
     height: 90px;
     background-color: rgba(153, 134, 119,0.7);
-
 }
 .mainNavButton{
     display: flex;
@@ -187,7 +128,7 @@ nav{
     border-radius: 25%;
     background-color: transparent;
     text-decoration: none;
-    color: #000;
+    color: var(--secondary-color);
     font-size: 1.5em;
     line-height: 1em;
     padding: 5px;
@@ -390,7 +331,7 @@ select{
 .checkAllert{
     margin: 15px 0 30px;
     font-size: 0.9em;
-    color: #000;
+    color: var(--secondary-color);
 }
 form p{
     text-align: left;
@@ -406,7 +347,7 @@ form p{
     border-radius: 40px;
     cursor: pointer;
     font-size: 1em;
-    color: #000;
+    color: var(--secondary-color);
     font-weight: bold;
     box-shadow: 0 0 10px #fff;
 }
@@ -495,6 +436,10 @@ footer h4{
 @media screen and (max-width:360px) {
     header h1{
         font-size: 36px;
+    }
+    .darkModeButtonBG{
+        width: 40px;
+        height: 40px;
     }
     .floatingMenu{
         right: 0px;;
