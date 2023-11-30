@@ -40,7 +40,7 @@ header h1{
                 0px 0px 120px white;
     padding: 32px;
 }
-.darkModeButtonBox{
+/* .darkModeButtonBox{
     margin: 0;
     width: 15vw;
     height: 10vh;
@@ -123,7 +123,7 @@ header h1{
 
 .darkInput:checked + .darkModeLabel svg.moon{
     fill:#fff;
-}
+} */
 nav{
     display: flex;
     justify-content: space-around;
@@ -139,6 +139,7 @@ nav{
     align-items: center;
     text-decoration: none;
     font-size: 16px;
+    text-align: center;
     color: #000;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
@@ -264,11 +265,6 @@ ion-icon{
 }
 a{
     text-decoration: none;
-}
-.fel{
-    display: flex;
-    justify-content: flex-end;
-
 }
 .jumpUp{
     display: flex;
@@ -441,4 +437,124 @@ footer .mainName{
 footer h4{
     font-size: 17px;
     font-family: Arial, Helvetica, sans-serif;
+}
+@media screen  and (max-width:800px) {
+    .mainNavButton{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:675px){
+    header{
+        height: 20vh;
+    }
+    header h1{
+        font-size: 52px;
+        padding: 8px;
+    }
+    nav{
+        justify-content: center;
+        flex-direction: column;
+        height: auto;
+    }
+    .mainNavButton{
+        width: 98vw;
+        margin: 0.5vh 2vw;
+        height: 48px;
+    }
+    h2{
+        font-size: 18px;
+        margin: 18px;
+    }
+    p{
+        margin: 12px 0px;
+        text-align: justify;
+    }
+    h3{
+        text-align: center;
+    }
+    h4{
+        margin: 12px 0;
+    }
+    ul{
+        padding-inline-start: 36px;
+    }
+    ol{
+        padding-inline-start: 12px;
+    }
+    ol li{
+        margin: 12px;
+        padding-inline-start: 12px;
+    }
+    footer{
+        padding: 12px 32px 12px 12px;
+    }
+    .connect{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:360px) {
+    header h1{
+        font-size: 36px;
+    }
+    .floatingMenu{
+        right: 0px;;
+    }
+    .floatingMenuButton{
+        height: 30px;
+        width: 30px;
+    }
+    .theArticle{
+        width: 98vw;
+        margin: 10px;
+    }
+    .jumpToTheTop{
+        margin: 1em 0 1em 0;
+        font-size: 12px;
+        width: 150px;
+        letter-spacing: normal;
+    }
+    .formBox{
+        height: auto;
+    }
+    .formPaper{
+        width: 100vw;
+        height: 700px;
+    }
+    .inputBox{
+        position: relative;
+        margin: 16px 0;  
+    }
+    .inputBox label{
+        left: 5px;
+        font-size: 1em;
+    }
+    .inputBox input{
+        height: 40px;
+        padding: 0 35px 0 5px;
+    }
+    .inputBox .icon{
+        line-height: 52px;
+    }
+    .birthDate{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .birthDate input{
+        padding: 5px;
+        width: 50%;
+    }
+    .inputBox textarea{
+        height: 7em;
+    }
+    .choose{
+        margin: 5px 0;
+    }
+    select{
+        width: 210px;
+        border: none;
+    }
+    form p{
+        font-weight: bold;
+    }
 }
