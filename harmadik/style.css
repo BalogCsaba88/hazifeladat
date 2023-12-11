@@ -3,13 +3,27 @@
     padding: 0;
     box-sizing: border-box;
 }
-:root{
+/*Javascripttel*/
+/* :root{
     --primary-color: rgba(153, 134, 119, 0.3);
     --secondary-color: #000;
 }
 .darkTheme{
     --primary-color: #000;
     --secondary-color: #fff;
+} */
+/*Tisztán CSS, rendszerbeállításnak megfelelően állítja a dark/light módot*/
+@media (prefers-color-scheme: dark){
+    body{
+        --primary-color: #000;
+        --secondary-color: #fff;
+    }
+}
+@media (prefers-color-scheme: light){
+    body{
+        --primary-color: rgba(153, 134, 119, 0.3);
+        --secondary-color: #000;
+    }
 }
 body{
     background-color: var(--primary-color);
