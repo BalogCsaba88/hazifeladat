@@ -11,19 +11,17 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
+        
+        <p id="top">Itt választhatsz színsémát:</p>
+        <input type="radio" name="radio" title="Classic Theme" class="chooserButton classic" checked/>
+        <span class="chooserButton classic"></span>
+        <input type="radio" name="radio" title="Barbie Theme" class="chooserButton barbie" />
+        <span class="chooserButton barbie"></span>
+        <input type="radio" name="radio" title="Ocean Theme" class="chooserButton ocean" />
+        <span class="chooserButton ocean"></span>
 
-        <header id="top">
+        <header>
             <h1>Kapp Pál mestercukrász</h1>
-            <div class="themeChooser">
-                    <p id="main">Itt választhatsz színsémát:</p>
-                    <input type="radio" name="radio" title="Classic Theme" class="chooserButton classic" checked/>
-                    <span class="chooserButton classic"></span>
-                    <input type="radio" name="radio" title="Barbie Theme" class="chooserButton barbie" />
-                    <span class="chooserButton barbie"></span>
-                    <input type="radio" name="radio" title="Ocean Theme" class="chooserButton ocean" />
-                    <span class="chooserButton ocean"></span>
-
-            </div>
         </header>
 
         <nav>
@@ -249,31 +247,31 @@
                     <h2>Cikk küldése ismerősnek</h2>
                     <p class="text-center">(Bootstrap változat)</p>
                     <div class="input-group mb-3 shadow-sm">
-                        <span class="input-group-text" id="basic-addon1"><ion-icon name="person-circle-outline"></ion-icon></span>
+                        <span class="input-group-text" id="basic-addon0"><ion-icon name="person-circle-outline"></ion-icon></span>
                         <label for="nev"></label>
-                        <input type="text" class="form-control" name="nev" id="nev" placeholder="Teljes neved *" required>
+                        <input type="text" class="form-control" name="nevBs" id="nevBs" placeholder="Teljes neved *" required>
                     </div>
                     <div class="input-group mb-3 shadow-sm">
                         <span class="input-group-text" id="basic-addon1"><ion-icon name="call"></ion-icon></span>
                         <label for="phoneNumber"></label>
-                        <input type="tel" class="form-control" name="telszam" id="phoneNumber" placeholder="Telefonszámod" maxlength="18">
+                        <input type="tel" class="form-control" name="telszamBs" id="phoneNumberBs" placeholder="Telefonszámod" maxlength="18">
                     </div>
                     <div class="input-group mb-3 shadow-sm">
-                        <span class="input-group-text" id="basic-addon1"><ion-icon name="mail"></ion-icon></span>
+                        <span class="input-group-text" id="basic-addon2"><ion-icon name="mail"></ion-icon></span>
                         <label for="email"></label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail címed *" required>
+                        <input type="email" class="form-control" name="emailBs" id="emailBs" placeholder="E-mail címed *" required>
                     </div>
                     <div class="input-group mb-3 shadow-sm">
-                        <span class="input-group-text" id="basic-addon1">Születési dátumod: </span>
-                        <input type="date" class="form-control" name="szulIdo" id="kor">
+                        <span class="input-group-text" id="basic-addon3">Születési dátumod: </span>
+                        <input type="date" class="form-control" name="szulIdoBs" id="korBs">
                     </div>
                     <div class="input-group mb-3 shadow-sm">
                         <span class="input-group-text">Üzenet:</span>
-                        <textarea name="mesage" class="form-control" placeholder="Ide írd az üzeneted!"></textarea>
+                        <textarea name="mesageBs" class="form-control" placeholder="Ide írd az üzeneted!"></textarea>
                     </div>
                     <div class="input-group mb-3 shadow-sm">
                         <label class="input-group-text" for="favorit">Kedvenc recepted: </label>
-                        <select class="form-select" id="favorit" name="kedvencCikk">
+                        <select class="form-select" id="favoritBs" name="kedvencCikkBs">
                             <option value="">-- Kérlek válassz a listából! --</option>
                             <option value="Feketeerdő torta">Feketeerdő torta</option>
                             <option value="Csupacsoki torta">Csupacsoki torta</option>
@@ -281,7 +279,7 @@
                         </select>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="hirlevel">Kérek értesítést az új receptekről.
+                        <input type="checkbox" class="form-check-input" name="hirlevelBs">Kérek értesítést az új receptekről.
                     </div>
                     <p>A *-al jelölt mezők kitöltése kötelező!</p>
                     <div class="d-grid gap-2">
