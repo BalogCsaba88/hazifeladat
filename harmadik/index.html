@@ -321,8 +321,9 @@
             articleText1 = document.querySelector("#article1") // Kiválasztom a szöveget
             const articleTextList1 = articleText1.innerText.trim().split(new RegExp("\\s+")) //Feldarabolom úgy, hogy az ismétlődő space-eket kiszűröm, létrejön egy lista
             const wordNumber1 = articleTextList1.length //Megszámolom az előzőleg létrehozott lista elemeit
-            let readTime1 = wordNumber1 / readSpeed //olvasási idő = a cikk szavainak száma osztva az olvasási sebesség
+            let readTime1 = wordNumber1 / readSpeed //Olvasási idő = a cikk szavainak száma osztva az olvasási sebesség
             document.getElementById("readTimeText1").innerHTML = "A cikket kb. " + readTime1.toPrecision(3) + " perc alatt lehet elolvasni!"
+            // Beilleszti az adatot némi rizsával a cikkbe
 
             articleText2 = document.querySelector("#article2")
             const articleTextList2 = articleText2.innerText.trim().split(new RegExp("\\s+"))
