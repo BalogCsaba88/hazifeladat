@@ -3,13 +3,27 @@
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --primary-color: rgba(153, 134, 119, 0.3);
-    --secondary-color: #000;
+/*Tisztán CSS, rendszerbeállításnak megfelelően állítja a dark/light módot*/
+@media (prefers-color-scheme: dark){
+    body{
+        --primary-color: #000;
+        --secondary-color: #fff;
+        --h3-color: rgb(255, 203, 134);
+    }
 }
-.darkTheme{
-    --primary-color: #000;
-    --secondary-color: #fff;
+@media (prefers-color-scheme: light){
+    body{
+        --primary-color: rgba(153, 134, 119, 0.3);
+        --secondary-color: #000;
+        --h3-color: saddlebrown;
+    }
+}
+/*-------------------------------------------------------------------------*/
+:root{
+    --classic-bg-color: rgba(255,255,255,0.3);
+    --barbie-bg-color: rgba(255, 0, 128, 0.7);
+    --ocean-bg-color:rgba(0, 0, 255, 0.7);
+
 }
 body{
     background-color: var(--primary-color);
@@ -21,6 +35,14 @@ body{
     align-items: center;
     min-height: 100vh;
     color: var(--secondary-color);
+}
+#top{
+    margin: 10px;
+    text-align: right;
+    position: absolute;
+    top: 0px;
+    right: 150px;
+    color: #000;
 }
 header{
     background-image: url("./images/asd.jpg");
@@ -49,22 +71,52 @@ header h1{
                 0px 0px 120px white;
     padding: 32px;
 }
-.darkModeButtonBG{
-    width: 50px;
-    height: 50px;
-    background: var(--primary-color);
-    margin: 20px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--secondary-color);
-    box-shadow: 0 0 10px var(--secondary-color) inset, 0 0 20px var(--primary-color);
+.chooserButton{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 14px;
 }
-#darkModeButton{
-    width: 40px;
-    height: 40px;
+input[type="radio"]{
+    z-index: 2;
     cursor: pointer;
+    opacity: 0;
+}
+span.chooserButton{
+    z-index: 1;
+    border-radius: 50%;
+    border: 2px solid #000;
+
+}
+.chooserButton.classic{ 
+    right: 122px;
+    background-color: rgba(153, 134, 119, 0.9);
+}
+.chooserButton.barbie{
+    right: 82px;   
+    background-color: hotpink;
+}
+.chooserButton.ocean{
+    right: 42px;
+    background-color: blue;
+}
+.chooserButton:checked + .chooserButton{
+    border-color: #0f0;
+}
+.classic:checked ~ .theArticle{
+    background-color: var(--classic-bg-color);
+}
+.barbie:checked ~ .theArticle{
+    background-color: var(--barbie-bg-color);
+}
+.barbie:checked ~ nav{
+    background-color: var(--barbie-bg-color);
+}
+.ocean:checked ~ .theArticle{
+    background-color: var(--ocean-bg-color);
+}
+.ocean:checked ~ nav{
+    background-color: var(--ocean-bg-color);
 }
 nav{
     display: flex;
@@ -81,7 +133,6 @@ nav{
     text-decoration: none;
     font-size: 16px;
     text-align: center;
-    color: #000;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 4px;
@@ -89,6 +140,7 @@ nav{
                 0 0 10px #fff,
                 0 0 15px #fff;
     background: transparent;
+    color: #000;
     margin: 0;
     width: 18vw;
     border-radius: 15px;
@@ -155,7 +207,7 @@ nav{
     flex-direction: column;
     justify-content: center;
     width: 90vw;
-    background-color: rgba(255,255,255,0.3);
+    /* background-color: rgba(255,255,255,0.3); */
     border-radius: 20px;
     box-shadow: 5px 5px 10px rgb(175, 175, 175);
     padding: 30px;
@@ -172,7 +224,7 @@ nav{
     display: flex;
     flex-direction: column;
 }
-p{
+section p{
     margin: 24px;
 }
 h2{
@@ -185,7 +237,7 @@ h2{
 h3{
     text-decoration: underline;
     margin: 16px 24px;
-    color: saddlebrown;
+    color: var(--h3-color);
 }
 h4{
     margin: 8px 24px;
@@ -214,7 +266,7 @@ a{
 .jumpToTheTop{
     height: 3em;
     width: 200px;
-    color: saddlebrown;
+    color: var(--h3-color);
     border: none;
     background: transparent;
     font-weight: bold;
@@ -250,7 +302,7 @@ a{
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 650px;
+    width: 90vw;
     height: 900px;
     background: transparent;
     border: 2px solid rgba(255,255,255, 0.5);
@@ -318,7 +370,7 @@ a{
     left: 5px;
     font-size: 1em;
 }
-select{
+.selectList{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     width: 320px;
@@ -360,6 +412,13 @@ form p{
     box-shadow: inset 0 0 15px rgba(139, 69, 19, 0.9),
                 0 0 10px #fff;
 }
+
+/* --Bootstrap mókolás-- */
+textarea.form-control {
+    min-height: calc(5em + 0.75rem + calc(var(--bs-border-width) * 2));
+}
+/*-----------------------*/
+
 footer{
     width: 100%;
     padding: 32px;
@@ -379,18 +438,26 @@ footer h4{
     font-size: 17px;
     font-family: Arial, Helvetica, sans-serif;
 }
+footer p{
+    margin: 24px;
+    width: 100%;
+    text-align: left;
+}
 @media screen  and (max-width:800px) {
     .mainNavButton{
         font-size: 14px;
     }
 }
 @media screen and (max-width:675px){
+    #top{
+        font-size: smaller;
+    }
     header{
         height: 20vh;
     }
     header h1{
         font-size: 52px;
-        padding: 8px;
+        text-align: center;
     }
     nav{
         justify-content: center;
