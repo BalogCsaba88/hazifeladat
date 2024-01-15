@@ -318,26 +318,15 @@
         <script>
             const readSpeed = 238 // Az internet szerint ez az átlagos olvasási sebesség szó/percben
 
-            articleText1 = document.querySelector("#article1") // Kiválasztom a szöveget
-            const articleTextList1 = articleText1.innerText.trim().split(new RegExp("\\s+")) //Feldarabolom úgy, hogy az ismétlődő space-eket kiszűröm, létrejön egy lista
-            const wordNumber1 = articleTextList1.length //Megszámolom az előzőleg létrehozott lista elemeit
-            let readTime1 = wordNumber1 / readSpeed //Olvasási idő = a cikk szavainak száma osztva az olvasási sebesség
-            document.getElementById("readTimeText1").innerHTML = "A cikket kb. " + readTime1.toPrecision(3) + " perc alatt lehet elolvasni!"
-            // Beilleszti az adatot némi rizsával a cikkbe
-
-            articleText2 = document.querySelector("#article2")
-            const articleTextList2 = articleText2.innerText.trim().split(new RegExp("\\s+"))
-            const wordNumber2 = articleTextList2.length
-            let readTime2 = wordNumber2 / readSpeed
-            document.getElementById("readTimeText2").innerHTML = "A cikket kb. " + readTime2.toPrecision(3) + " perc alatt lehet elolvasni!"
-
-
-            articleText3 = document.querySelector("#article3")
-            const articleTextList3 = articleText3.innerText.trim().split(new RegExp("\\s+"))
-            const wordNumber3 = articleTextList3.length
-            let readTime3 = wordNumber3 / readSpeed
-            document.getElementById("readTimeText3").innerHTML = "A cikket kb. " + readTime3.toPrecision(3) + " perc alatt lehet elolvasni!"
-
+            for (let index = 1; index < 4; index++) {
+                let articleId = "#article" + index;
+                let articleText = document.querySelector(articleId);
+                let articleTextList = articleText.innerText.trim().split(new RegExp("\\s+"));
+                let wordNumber = articleTextList.length;
+                let readTime = wordNumber / readSpeed;
+                let anchor = "readTimeText" + index;
+                document.getElementById(anchor).innerHTML = "Ezt a cikket kb. " + readTime.toPrecision(3) + " perc alatt lehet elolvasni!"
+            }
         </script>
 
     </body>
