@@ -22,6 +22,11 @@
 
         <header>
             <h1>Kapp Pál mestercukrász</h1>
+            <div class="searchWrapper">
+                <label for="search">Keresés a cikkekben: </label>
+                <input type="search" id="searchInput">
+                <!-- <button onclick="search()">Keresés</button> -->
+            </div>
         </header>
 
         <nav>
@@ -46,7 +51,7 @@
                 <div class="cookiePicture">
                     <img src="./images/feketeerdo_torta.jpg" alt="Ínycsiklandó Feketeerdő torta">
                 </div>
-                <p>Annyi tudunk, hogy a sütemény talán 1930 tavaszán a Café Walz-ban született, Tübingenben. Állítólag egy Erwin Hildenbrand nevű úr találta fel, aki korábban éveken át dolgozott a Fekete-erdőben, s valószínűleg az ottani benyomások nyomán készítette s keresztelte el a süteményt.</p>
+                <p id="p">Annyi tudunk, hogy a sütemény talán 1930 tavaszán a Café Walz-ban született, Tübingenben. Állítólag egy Erwin Hildenbrand nevű úr találta fel, aki korábban éveken át dolgozott a Fekete-erdőben, s valószínűleg az ottani benyomások nyomán készítette s keresztelte el a süteményt.</p>
             </section>
             <section>
                 <h3>Hozzávalók</h3>
@@ -300,12 +305,12 @@
                 <a href="#top" title="ugrás" class="jumpToTheTop"><ion-icon name="arrow-up-circle"></ion-icon> Ugrás a lap tetejére</a>
             </div>
             <h4>Elérhetőségeink</h4>
-            <p id="connect" class="connect">
-                <span class="mainName">Kapp Pál <sup>&reg;</sup></span><br>
-                <span class="icon"><ion-icon name="call" size="small"></ion-icon> </span> Telefon: +36 30/123 456<br>
-                <span class="icon"><ion-icon name="at-circle" size="small"></ion-icon> </span> E-mail: asd@dsa.hu<br>
-                <span class="icon"><ion-icon name="mail" size="small"></ion-icon> </span> Postázási cím: 7630 Pécs, Basamalom út 33
-            </p>
+            <address id="connect" class="connect">
+                <p><span class="mainName">Kapp Pál <sup>&reg;</sup></span></p>
+                <p><span class="icon"><ion-icon name="call" size="small"></ion-icon> </span> Telefon: +36 30/123 456<br></p>
+                <p><span class="icon"><ion-icon name="at-circle" size="small"></ion-icon> </span> E-mail: asd@dsa.hu<br></p>
+                <p><span class="icon"><ion-icon name="mail" size="small"></ion-icon> </span> Postázási cím: 7630 Pécs, Basamalom út 33</p>
+            </address>
         </footer>
 
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
@@ -316,8 +321,8 @@
         </script>
 
         <script>
+            //Hány perc alatt lehet elolvasni a cikket:
             const readSpeed = 238 // Az internet szerint ez az átlagos olvasási sebesség szó/percben
-
             for (let index = 1; index < 4; index++) {
                 let articleId = "#article" + index;
                 let articleText = document.querySelector(articleId);
@@ -327,6 +332,41 @@
                 let anchor = "readTimeText" + index;
                 document.getElementById(anchor).innerHTML = "Ezt a cikket kb. " + readTime.toPrecision(3) + " perc alatt lehet elolvasni!"
             }
+
+            //Kereső
+           /** EZ KB JÓ, DE GOMBNYOMÁSRA HÍVJA MEG A FUNKCIÓT
+           const p = document.getElementById("p");
+           function search(){
+                let input = document.getElementById("searchInput").value;
+
+                if (input !== "") {
+                    let regExp = new RegExp (input, "gi");
+                    p.innerHTML = (p.textContent).replace(regExp, "<mark>$&</mark>");
+                }
+           }
+           **/
+           const input = document.getElementById("searchInput")
+            input.addEventListener("keyup", () =>{
+                const filter = input.value.toLowerCase();
+                const paragraphs = document.querySelectorAll("li,p");
+                if (filter ==='') {
+                    paragraphs.forEach(p => {
+                        p.innerHTML = p.TextContent;
+                    });
+                    return;
+                }
+                paragraphs.forEach(p => {
+                    let txtValue = p.textContent;
+                    if (txtValue.toLowerCase().indexOf(filter) > -1){
+                        txtValue = txtValue.replace(new RegExp(filter, "gi"), '<span class="mark">$&</span>');
+                        p.innerHTML = txtValue;
+                    }
+                    else {
+                        p.innerHTML = txtValue;
+                    }
+                });
+            });
+
         </script>
 
     </body>

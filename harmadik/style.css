@@ -71,6 +71,31 @@ header h1{
                 0px 0px 120px white;
     padding: 32px;
 }
+.searchWrapper{
+    height: 50px;
+    background: linear-gradient(rgba(153, 134, 119, 0.5), #000);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 10px;
+    padding: 15px;
+    border-radius: 5px;
+    
+}
+.searchWrapper input{
+    background:  rgba(255,255,255,0.5);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #fff;
+    font-size: 1em;
+    color: #000;
+    padding: 5px 15px 0 5px;
+    margin-left: 15px;
+}
+.mark{
+    background-color: #0f0;
+}
 .chooserButton{
     width: 20px;
     height: 20px;
@@ -444,7 +469,7 @@ footer h4{
     font-family: Arial, Helvetica, sans-serif;
 }
 footer p{
-    margin: 24px;
+    margin: 12px;
     width: 100%;
     text-align: left;
 }
