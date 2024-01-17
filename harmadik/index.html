@@ -23,9 +23,10 @@
         <header>
             <h1>Kapp Pál mestercukrász</h1>
             <div class="searchWrapper">
-                <label for="search">Keresés a cikkekben: </label>
-                <input type="search" id="searchInput">
-                <!-- <button onclick="search()">Keresés</button> -->
+                <form action="#">
+                    <label for="searchInput">Keresés a cikkekben: </label>
+                    <input type="search" id="searchInput">
+                </form>
             </div>
         </header>
 
@@ -333,19 +334,19 @@
                 document.getElementById(anchor).innerHTML = "Ezt a cikket kb. " + readTime.toPrecision(3) + " perc alatt lehet elolvasni!"
             }
 
-            //Kereső
-           /** EZ KB JÓ, DE GOMBNYOMÁSRA HÍVJA MEG A FUNKCIÓT
-           const p = document.getElementById("p");
-           function search(){
-                let input = document.getElementById("searchInput").value;
+            //Live kereső
+            /* Tanóra alapján próbálkoztam, de nem sikerült, idő hiánya miatt feladtam, kerestem neten megoldást
 
-                if (input !== "") {
-                    let regExp = new RegExp (input, "gi");
-                    p.innerHTML = (p.textContent).replace(regExp, "<mark>$&</mark>");
-                }
-           }
-           **/
-           const input = document.getElementById("searchInput")
+                const input = document.getElementById("searchInput")
+                input.addEventListener("keyup", () =>{
+                    document.querySelector("body").innerHTML = document.querySelector("body").innerHTML.replaceAll("input", '<span class=mark">$&</span>')
+                })
+
+            */
+
+           //Neten találtam, még tanulmányozom, majdnem jól működik, kis- és nagybetűre nem érzékeny, de pl backspace-re undefined-et ír mindenre
+            
+            const input = document.getElementById("searchInput")
             input.addEventListener("keyup", () =>{
                 const filter = input.value.toLowerCase();
                 const paragraphs = document.querySelectorAll("li,p");
@@ -356,7 +357,7 @@
                     return;
                 }
                 paragraphs.forEach(p => {
-                    let txtValue = p.textContent;
+                let txtValue = p.textContent;
                     if (txtValue.toLowerCase().indexOf(filter) > -1){
                         txtValue = txtValue.replace(new RegExp(filter, "gi"), '<span class="mark">$&</span>');
                         p.innerHTML = txtValue;
