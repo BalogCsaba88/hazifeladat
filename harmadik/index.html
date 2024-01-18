@@ -368,6 +368,23 @@
                 });
             });
 
+            //API hívás, random usernek az adatait kiírni
+
+            fetch('https://jsonplaceholder.typicode.com/users')
+            .then((response) => response.json())
+            .then((json) => {
+                let randomUser = json[Math.floor(Math.random() * json.length)]; //Véletlenszerűen választ a JSON-ből
+                let randomUserData  = document.createElement('div'); //Új div létrehozása
+                randomUserData.innerHTML =  //Div feltöltése a véletlenszerűen kiválasztott user adataival
+                    `<p style="text-decoration: underline">Véletlenszerűen kiválasztott user adatai:<p>
+                    <p class="connect">Név: ${randomUser.name}</p>
+                    <p class="connect">E-mail: <a href="mailto:${randomUser.email}">${randomUser.email}</a></p>
+                    <p class="connect">Telefonszám: ${randomUser.phone}</p>
+                    <p class="connect">Cégnév: ${randomUser.company.name}</p>`;
+                let randomConnect = document.querySelector('footer')    //Ebbe fogja betölteni
+                randomConnect.appendChild(randomUserData);  //A footer végére beilleszti
+            })
+
         </script>
 
     </body>
