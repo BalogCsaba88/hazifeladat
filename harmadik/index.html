@@ -13,12 +13,12 @@
     <body>
         
         <p id="top">Itt választhatsz színsémát:</p>
-        <input type="radio" name="radio" title="Classic Theme" aria-describedby="Klasszikus, barnás színséma" class="chooserButton classic" checked/>
-        <span class="chooserButton classic" role="radio"></span>
-        <input type="radio" name="radio" title="Barbie Theme" aria-describedby="Rózsaszínű színséma" class="chooserButton barbie" />
-        <span class="chooserButton barbie" role="radio"></span>
-        <input type="radio" name="radio" title="Ocean Theme" aria-describedby="Kékes színséma" class="chooserButton ocean" />
-        <span class="chooserButton ocean" role="radio"></span>
+        <input type="radio" name="radio" title="Classic Theme" class="chooserButton classic" checked />
+        <span class="chooserButton classic" role="radio" aria-checked="true"></span>
+        <input type="radio" name="radio" title="Barbie Theme" class="chooserButton barbie" />
+        <span class="chooserButton barbie" role="radio" aria-checked="false"></span>
+        <input type="radio" name="radio" title="Ocean Theme" class="chooserButton ocean" />
+        <span class="chooserButton ocean" role="radio" aria-checked="false"></span>
 
         <header>
             <h1>Kapp Pál mestercukrász</h1>
@@ -50,7 +50,7 @@
             <p id="readTimeText1">
             </p>
                 <div class="cookiePicture">
-                    <img src="./images/feketeerdo_torta.jpg" alt="Ínycsiklandó Feketeerdő torta" aria-describedby="Ínycsiklandó Feketeerdő torta">
+                    <img src="./images/feketeerdo_torta.jpg" alt="Ínycsiklandó Feketeerdő torta">
                 </div>
                 <p>Annyi tudunk, hogy a sütemény talán 1930 tavaszán a Café Walz-ban született, Tübingenben. Állítólag egy Erwin Hildenbrand nevű úr találta fel, aki korábban éveken át dolgozott a Fekete-erdőben, s valószínűleg az ottani benyomások nyomán készítette s keresztelte el a süteményt.</p>
             </section>
@@ -104,7 +104,7 @@
             <p id="readTimeText2">
             </p>
                 <div class="cookiePicture">
-                    <img src="./images/csupa_csokitrorta.jpg" alt="Csudafinom csupa csokitorta" aria-describedby="Csudafinom csupa csokitorta">
+                    <img src="./images/csupa_csokitrorta.jpg" alt="Csudafinom csupa csokitorta">
                 </div>
                 <p>A csokoládétorta egy általános desszerttorta, melyet különböző alkalmakkor, születésnapi bulin, esküvőn szokás felszolgálni, de a legtöbb cukrászdában is fogyasztható. Legfontosabb összetevője a csokoládé. Számos eltérő típusú csokoládétorta létezik, ami a hozzávalók változtatásától és a csokoládé ízétől függ. Nem ritka a rum és méz felhasználásával készült csokoládétorta.</p>
             </section>
@@ -164,7 +164,7 @@
             <p id="readTimeText3">
             </p>
                 <div class="cookiePicture">
-                    <img src="./images/afonyas_sajttorta.jpg" alt="Gusztusos áfonyás sajttorta áfonyával a tetjén" aria-describedby="Gusztusos áfonyás sajttorta áfonyával a tetjén">
+                    <img src="./images/afonyas_sajttorta.jpg" alt="Gusztusos áfonyás sajttorta áfonyával a tetjén">
                 </div>
                 <p>A sajttortát sokan egynek gondolják a New York Cheesecake-kel, és ebből azt a következtetést vonják le, hogy a legelső sajttorta is New York-i illetőségű volt. Nos, ők tévednek. Hihetetlennek tűnik, de igaz, hogy ezt a trendi desszertet már az ókori görögök is ismerték.</p>
             </section>
@@ -233,7 +233,7 @@
                         <input type="date" name="szulIdo" id="kor">
                     </div>
                     <div class="inputBox">
-                        <textarea name="label element" for="userMessage" placeholder="Ide írd az üzeneted!"></textarea>
+                        <textarea name="userMessage" placeholder="Ide írd az üzeneted!"></textarea>
                     </div>
                     <div class="choose">
                         <label for="favorit">Kedvenc recepted: </label>
@@ -279,7 +279,7 @@
                     </div>
                     <div class="input-group mb-3 shadow-sm">
                         <span class="input-group-text">Üzenet:</span>
-                        <textarea name="label element" for="userMessage" class="form-control" placeholder="Ide írd az üzeneted!"></textarea>
+                        <textarea name="userMessage" class="form-control" placeholder="Ide írd az üzeneted!"></textarea>
                     </div>
                     <div class="input-group mb-3 shadow-sm">
                         <label class="input-group-text" for="favorit">Kedvenc recepted: </label>
