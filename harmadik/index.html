@@ -13,12 +13,12 @@
     <body>
         
         <p id="top">Itt választhatsz színsémát:</p>
-        <input type="radio" name="radio" title="Classic Theme" class="chooserButton classic" checked/>
-        <span class="chooserButton classic"></span>
-        <input type="radio" name="radio" title="Barbie Theme" class="chooserButton barbie" />
-        <span class="chooserButton barbie"></span>
-        <input type="radio" name="radio" title="Ocean Theme" class="chooserButton ocean" />
-        <span class="chooserButton ocean"></span>
+        <input type="radio" name="radio" title="Classic Theme" aria-describedby="Klasszikus, barnás színséma" class="chooserButton classic" checked/>
+        <span class="chooserButton classic" role="radio"></span>
+        <input type="radio" name="radio" title="Barbie Theme" aria-describedby="Rózsaszínű színséma" class="chooserButton barbie" />
+        <span class="chooserButton barbie" role="radio"></span>
+        <input type="radio" name="radio" title="Ocean Theme" aria-describedby="Kékes színséma" class="chooserButton ocean" />
+        <span class="chooserButton ocean" role="radio"></span>
 
         <header>
             <h1>Kapp Pál mestercukrász</h1>
@@ -31,16 +31,16 @@
         </header>
 
         <nav>
-            <a class="mainNavButton" href="#article1" title="Első cikk">Feketeerdő torta</a>
-            <a class="mainNavButton" href="#article2" title="Második cikk">Csupacsoki torta</a>
-            <a class="mainNavButton" href="#article3" title="Harmadik cikk">Áfonyás sajttorta</a>
-            <a class="mainNavButton" href="#connect" title="Elérhetőségeink">Kapcsolat</a>
-            <a class="mainNavButton" href="#theForm" title="Űrlap">Cikk küldése</a>
+            <a class="mainNavButton" href="#article1" title="Első cikk" role="button">Feketeerdő torta</a>
+            <a class="mainNavButton" href="#article2" title="Második cikk" role="button">Csupacsoki torta</a>
+            <a class="mainNavButton" href="#article3" title="Harmadik cikk" role="button">Áfonyás sajttorta</a>
+            <a class="mainNavButton" href="#connect" title="Elérhetőségeink" role="button">Kapcsolat</a>
+            <a class="mainNavButton" href="#theForm" title="Űrlap" role="button">Cikk küldése</a>
             <div class="floatingMenu">
-                <a class="floatingMenuButton facebook" href="#" title="Facebook" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
-                <a class="floatingMenuButton twitter" href="#" title="Twitter" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
-                <a class="floatingMenuButton printerest" href="#" title="Pinterest" target="_blank"><ion-icon name="logo-pinterest"></ion-icon></a>
-                <a class="floatingMenuButton instagram" href="#" title="Instagram" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a class="floatingMenuButton facebook" href="https://facebook.com" title="Facebook" target="_blank" role="button"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a class="floatingMenuButton twitter" href="https://twitter.com" title="Twitter" target="_blank" role="button"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a class="floatingMenuButton printerest" href="https://printerest.com" title="Pinterest" target="_blank" role="button"><ion-icon name="logo-pinterest"></ion-icon></a>
+                <a class="floatingMenuButton instagram" href="https://instagram.com" title="Instagram" target="_blank" role="button"><ion-icon name="logo-instagram"></ion-icon></a>
             </div>
         </nav>
         
@@ -50,7 +50,7 @@
             <p id="readTimeText1">
             </p>
                 <div class="cookiePicture">
-                    <img src="./images/feketeerdo_torta.jpg" alt="Ínycsiklandó Feketeerdő torta">
+                    <img src="./images/feketeerdo_torta.jpg" alt="Ínycsiklandó Feketeerdő torta" aria-describedby="Ínycsiklandó Feketeerdő torta">
                 </div>
                 <p>Annyi tudunk, hogy a sütemény talán 1930 tavaszán a Café Walz-ban született, Tübingenben. Állítólag egy Erwin Hildenbrand nevű úr találta fel, aki korábban éveken át dolgozott a Fekete-erdőben, s valószínűleg az ottani benyomások nyomán készítette s keresztelte el a süteményt.</p>
             </section>
@@ -104,7 +104,7 @@
             <p id="readTimeText2">
             </p>
                 <div class="cookiePicture">
-                    <img src="./images/csupa_csokitrorta.jpg" alt="Csudafinom csupa csokitorta">
+                    <img src="./images/csupa_csokitrorta.jpg" alt="Csudafinom csupa csokitorta" aria-describedby="Csudafinom csupa csokitorta">
                 </div>
                 <p>A csokoládétorta egy általános desszerttorta, melyet különböző alkalmakkor, születésnapi bulin, esküvőn szokás felszolgálni, de a legtöbb cukrászdában is fogyasztható. Legfontosabb összetevője a csokoládé. Számos eltérő típusú csokoládétorta létezik, ami a hozzávalók változtatásától és a csokoládé ízétől függ. Nem ritka a rum és méz felhasználásával készült csokoládétorta.</p>
             </section>
@@ -164,7 +164,7 @@
             <p id="readTimeText3">
             </p>
                 <div class="cookiePicture">
-                    <img src="./images/afonyas_sajttorta.jpg" alt="Gusztusos áfonyás sajttorta áfonyával a tetjén">
+                    <img src="./images/afonyas_sajttorta.jpg" alt="Gusztusos áfonyás sajttorta áfonyával a tetjén" aria-describedby="Gusztusos áfonyás sajttorta áfonyával a tetjén">
                 </div>
                 <p>A sajttortát sokan egynek gondolják a New York Cheesecake-kel, és ebből azt a következtetést vonják le, hogy a legelső sajttorta is New York-i illetőségű volt. Nos, ők tévednek. Hihetetlennek tűnik, de igaz, hogy ezt a trendi desszertet már az ókori görögök is ismerték.</p>
             </section>
@@ -233,7 +233,7 @@
                         <input type="date" name="szulIdo" id="kor">
                     </div>
                     <div class="inputBox">
-                        <textarea name="mesage" placeholder="Ide írd az üzeneted!"></textarea>
+                        <textarea name="label element" for="userMessage" placeholder="Ide írd az üzeneted!"></textarea>
                     </div>
                     <div class="choose">
                         <label for="favorit">Kedvenc recepted: </label>
@@ -279,7 +279,7 @@
                     </div>
                     <div class="input-group mb-3 shadow-sm">
                         <span class="input-group-text">Üzenet:</span>
-                        <textarea name="mesageBs" class="form-control" placeholder="Ide írd az üzeneted!"></textarea>
+                        <textarea name="label element" for="userMessage" class="form-control" placeholder="Ide írd az üzeneted!"></textarea>
                     </div>
                     <div class="input-group mb-3 shadow-sm">
                         <label class="input-group-text" for="favorit">Kedvenc recepted: </label>
